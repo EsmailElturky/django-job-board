@@ -12,3 +12,9 @@ steps done
 -view : logic
 - models : db
 -templates : frontend
+
+
+Relation:
+    -one to many[author-posts] Forienkey
+    -many to many [user-group] 
+    -one to one [user-profile]
