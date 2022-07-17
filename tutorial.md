@@ -18,3 +18,7 @@ Relation:
     -one to many[author-posts] Forienkey
     -many to many [user-group] 
     -one to one [user-profile]
+
+
+static files :[frontend] images ,css , javascript
+media files : [upload] images
