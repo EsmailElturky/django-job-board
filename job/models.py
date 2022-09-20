@@ -23,7 +23,8 @@ def image_upload(instance,filename):
 
 class Job(models.Model):
     owner=models.ForeignKey(User,related_name='job_owner',on_delete=models.CASCADE)
-    title = models.CharField(max_length=100) #column
+    title = models.CharField(max_length=100)
+    #column
     #location
     job_type=models.CharField(max_length=15,choices=JOB_TYPE)
     description=models.TextField(max_length=1000)
@@ -33,7 +34,6 @@ class Job(models.Model):
     experience=models.IntegerField(default=5)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     image =models.ImageField(upload_to=image_upload)
-
     slug=models.SlugField(blank=True,null=True)
 
     def save(self, *args, **kwargs):

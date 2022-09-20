@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+
+{% block body%}
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>Get in Toutch</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<div class="row">
+<div class="col-lg-8 mx-auto">
+    <form class="form-container contact_form mt-2" method="post" >
+        {% csrf_token %}
+        <div class="row">
+           <div class="col-12">
+                <div class="form-group">
+                    <input class="form-control" name="subject" placeholder="enter subject">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <input class="form-control" name="email" placeholder="Enter email" id="email">
+                </div>
+            </div>
+       <div class="col-12">
+                <div class="form-group">
+                    <input class="form-control" name="message" placeholder="enter message">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" class="boxed-btn3 w-100">Send Message</button>
+        </div>
+
+    </form>
+</div>
+</div>
+
+
+
+
+
+{% endblock body%}

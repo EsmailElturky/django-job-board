@@ -3,11 +3,15 @@ from django.urls import reverse
 from .models import Job
 from .form import ApplyForm,JobForm
 from django.contrib.auth.decorators import login_required
+from .filters import JobFilter
 # Create your views here.
 
+@login_required
 def job_list(request):
     job_list = Job.objects.all()
-    context = {'jobs':job_list} 
+    filter=JobFilter(request.GET,queryset=job_list)
+    job_list=filter.qs
+    context = {'jobs':job_list,'filter':filter}
     return render(request,'job/jobs.html',context)
 
 
